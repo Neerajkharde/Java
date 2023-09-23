@@ -1,0 +1,54 @@
+// Java Source Code
+import java.util.*;
+public class Problem {
+    public static void printSqrt(int num1) {
+        double sqrt = 0;
+            for(int i=1; i<=num1; i++){
+                if(num1%i==0 && i*i==num1){
+                    sqrt = i;
+                }
+            }System.out.println("Sqrt of your number is:"+sqrt);
+    }
+    public static void printLog(int num2) {
+        double flog = Math.log(num2); // Using Math class!
+        System.out.println("Natural Log of your number is:"+flog);
+    }
+    public static int calcFactorial(int num3) { // Using Recursion
+        if(num3==1 || num3==0){
+            return 1;
+        }
+        int fac_nm1 = calcFactorial(num3 - 1);
+        int fac_n = num3 * fac_nm1;
+        return fac_n;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to the simple math helper.");
+        System.out.println("What would you like to calculate?\n1. Sqrt\n2. Log(Base = e)\n3. Factorial");
+        int a = sc.nextInt();
+
+        switch (a) {
+            case 1://Sqrt
+            System.out.println("Enter the number to sqrt:");
+            int num1 = sc.nextInt();
+            printSqrt(num1);
+            break;
+
+            case 2://Log
+            System.out.println("Enter the number to find Log:");
+            int num2 = sc.nextInt();
+            printLog(num2);
+            break;
+
+            case 3://Factorial
+            System.out.println("Enter the number to find Factorial:");
+            int num3 = sc.nextInt();
+            int fact = calcFactorial(num3);
+            System.out.println("Factorial of your number is:"+fact);
+            break;
+        
+            default:System.out.println("Invalid Number!");
+            break;
+        }
+    }
+}

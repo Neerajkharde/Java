@@ -1,0 +1,54 @@
+// Calculator
+// Only Integers (Complete whole numbers)
+import java.util.*;
+
+class Calcu{
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        int operator;
+        int m;
+        do{
+            System.out.println("Enter 1st no.");
+            int a = sc.nextInt();
+            System.out.println("Enter 2nd no.");
+            int b = sc.nextInt();
+            System.out.println("What to do?\n1 for Addition\n2 for Subtraction\n3 for Divison\n4 for Multiplication\n5 for Remainder");
+            operator = sc.nextInt();
+            double k = a / b;
+    
+            switch(operator){
+                case 1:System.out.println("Addition is:");
+                System.out.println(a + b);
+                break;
+                case 2:if(a > b) {
+                    System.out.println("Subtraction is:");
+                    System.out.println(a - b);
+                }else if(b > a){
+                    System.out.println("Subtraction is:");
+                    System.out.println(b - a);
+                }
+                break;
+                case 3: if(b == 0){
+                    System.out.println("Not Defined.");
+                }else{
+                    System.out.println("Quotient is:");
+                    System.out.println(k);
+                }break;
+                case 4:System.out.println("Multiplication is:");
+                System.out.println(a * b);
+                break;
+                case 5:  if(b == 0){
+                    System.out.println("Cannot Find Remainder.");
+                }else { System.out.println("Remainder is:");
+                    System.out.println(a % b);
+                }break;
+                default: System.out.println("Invalid Operation.");
+            }  
+            System.out.println("Do you want to continue?\nYes: 1 and No: 0");
+             m = sc.nextInt();
+
+        }while(m>0 & m<2);
+        
+    }
+}
